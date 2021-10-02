@@ -1,7 +1,5 @@
 init()
-function init(){
-
-}
+function init(){}
 
 
 function abrirModal(){
@@ -26,12 +24,6 @@ function guardarRegistro(){
     var nombre = $('#inputNombre').val();
     if( nombre.length == 0 ){
        
-        // Swal.fire(
-        //     'Ingrese el Nombre!',
-        //     'Dato Obligatorio',
-        //     'warning'
-        // );
-
         $('#msgenvio').html('<div class="alert alert-danger" role="alert">Ingrese el Nombre </div>').show(300).delay(2000).hide(300);
 
         $('#inputNombre').focus();
@@ -79,19 +71,48 @@ function guardarRegistro(){
     return false;
 }
 
-function editarPrograma(){
+function editarPrograma( idprog ){
+    // alert('Hola Editar '+idprog);
+
     setTimeout( function () {
         $('#inputNombre').focus();
     }, 1000 );
     
     $('#titulo_ventana').text('Editar Programa');
-    $('#inputAccion').val('Udpate');
-    
+    var ruta = "../controller/cProgramasC.php";
+    var accion = "SelectByID";
 
-    $('#w_programa').modal({
-        show: true,
-        backdrop: 'static'
-    });    
+    $.ajax({
+        type: 'POST',
+        url: ruta,
+        data: 'inputAccion=' + accion + '&inputID='+ idprog,
+        success: function (rpta)
+        {
+
+            datos = JSON.parse( rpta );
+
+            $('#inputID').val( datos.idprograma );
+            $('#inputNombre').val( datos.nomb_pro );
+            $('#inputDesc').val( datos.desc_pro );
+
+            if( datos.estd_pro == 'A' ){
+                $('#inputEstado').attr('checked', true);
+            }else{
+                $('#inputEstado').attr('checked', false);
+            }
+
+            $('#inputAccion').val('Update');
+
+            $('#w_programa').modal({
+                show: true,
+                backdrop: 'static'
+            });  
+        }
+    });
+
+
+    
+  
     
 }
 

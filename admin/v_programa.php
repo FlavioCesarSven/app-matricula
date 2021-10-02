@@ -93,7 +93,7 @@
                                                     <td><?php echo $row["desc_pro"] ?></td>
                                                     <td><?php echo $row["estd_pro"] ?></td>
                                                     <td>
-                                                        <button class="btn btn-danger" onclick="editarPrograma()" title="Actualizar">
+                                                        <button class="btn btn-danger" onclick="editarPrograma(<?php echo $row["idprograma"] ?> )" title="Actualizar">
                                                             <i class="fa fa-edit"></i>
                                                         </button>
 

@@ -35,6 +35,13 @@ class cProgramasC
         return $msg;
     }
 
+    function Update(cProgramaE $oEnt)
+    {
+        $oMod = new cProgramasM();
+        $msg = $oMod->Editar($oEnt );
+        return $msg;
+    }
+
     function Delete($idprog) {
         //crear un objeto a partir del modelo
         $oMod = new cProgramasM();
@@ -42,6 +49,15 @@ class cProgramasC
         $msg = $oMod->Eliminar( $idprog );
         //retornar Mensaje
         return $msg;
+    }
+
+    function SelecById($idprog) {
+        //crear un objeto a partir del modelo
+        $oMod = new cProgramasM();
+        //Trasladar los datos al Modelo y se recepciona Mensaje
+        $row = $oMod->SeleccionarxID( $idprog );
+        //retornar Mensaje
+        return $row;
     }
 
 
@@ -62,13 +78,13 @@ if (isset($_REQUEST["inputAccion"])) {
             break;
         case "Update":
             //print_r($_POST);
-            // echo $oCont->Update($oCont->getDataForm());
+            echo $oCont->Update($oCont->getDataForm());
             break;
         case "Delete":
             echo $oCont->Delete($_REQUEST["inputID"]);
             break;
         case "SelectByID":
-            // $rpta = $oCont->SelectByID($_REQUEST["InputID"]);
+            $rpta = $oCont->SelecById($_REQUEST["inputID"]);
             echo json_encode($rpta);
             break;
         

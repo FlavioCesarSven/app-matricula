@@ -23,7 +23,7 @@
                   <div class="form-group">
                     <label for="inputID">ID</label>
                     <input type="text" class="form-control" id="inputID" name="inputID" readonly>
-                    <input type="hidden" class="form-control" id="inputAccion" name="inputAccion" >
+                    <input type="text" class="form-control" id="inputAccion" name="inputAccion" >
                   </div>
 
                   <div class="form-group">
