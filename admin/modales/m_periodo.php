@@ -5,9 +5,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"  id="titulo_ventana">Programas</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
             <div class="modal-body">
             <div class="card card-primary">
@@ -30,6 +30,16 @@
                     <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder="Nombre">
                   </div>
 
+                  <div class="form-group">
+                    <label for="inputFinicio">Fecha de Inicio</label>
+                      <input type="date" class="form-control" id="inputFinicio" name="inputFinicio" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputFinal">Fecha Finalización</label>
+                      <input type="date" class="form-control" id="inputFinal" name="inputFinal" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                  </div>
+
                   <div class="form-group" id="msgenvio"></div>
 
 
@@ -43,7 +53,7 @@
             </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button onclick="actualizarPagina()" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 <button  type="submit" class="btn btn-danger"> <i class="fas fa-save"></i> Guardar</button>
             </div>
         </div>

@@ -76,6 +76,8 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Nombre</th>
+                                                <th>Fecha de Inicio</th>
+                                                <th>Fecha de Finalización</th>
                                                 <th>Estado</th>
                                                 <th>Opciones</th>
                                             </tr>
@@ -89,13 +91,15 @@
                                                 <tr>
                                                     <td><?php echo $row["idperiodo"] ?></td>
                                                     <td><?php echo $row["nomb_per"] ?></td>
+                                                    <td><?php echo $row["fini_per"] ?></td>
+                                                    <td><?php echo $row["ffin_per"] ?></td>
                                                     <td><?php echo $row["estd_per"] ?></td>
                                                     <td>
-                                                        <button class="btn btn-danger" title="Actualizar">
+                                                        <button class="btn btn-danger" onclick="editarPrograma(<?php echo $row["idperiodo"] ?> )" title="Actualizar">
                                                             <i class="fa fa-edit"></i>
                                                         </button>
 
-                                                        <button class="btn btn-warning" title="Eliminar">
+                                                        <button class="btn btn-warning" onclick="eliminarRegistro( <?php echo $row["idperiodo"] ?> )" title="Eliminar <?php echo $row["nomb_per"]?>">
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </td>
@@ -133,8 +137,9 @@
     </div>
     <!-- ./wrapper -->
 
-
     <?php include_once './includes/s_js.php' ?>
 </body>
-<script src="../js/js_periodo.js" type="text/javascript"></script>
+
+<script src="../js/js_periodo.js"></script>
+
 </html>

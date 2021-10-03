@@ -60,8 +60,6 @@ class cProgramasC
         return $row;
     }
 
-
-
 }
 //Realizar Accion (Insert, Update, Delete, Select) segÃºn datos llegados desde el Formulario
 if (isset($_REQUEST["inputAccion"])) {

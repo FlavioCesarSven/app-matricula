@@ -7,16 +7,14 @@ function abrirModal(){
     setTimeout( function () {
         $('#inputNombre').focus();
     }, 1000 );
-
+    
     $('#titulo_ventana').text('Agregar Programa');
-
     $('#inputAccion').val('Insert');
-    
-    
     $('#w_programa').modal({
         show: true,
         backdrop: 'static'
     });    
+
     
 }
 
@@ -72,7 +70,6 @@ function guardarRegistro(){
 }
 
 function editarPrograma( idprog ){
-    // alert('Hola Editar '+idprog);
 
     setTimeout( function () {
         $('#inputNombre').focus();
@@ -110,10 +107,6 @@ function editarPrograma( idprog ){
         }
     });
 
-
-    
-  
-    
 }
 
 function actualizarPagina(){

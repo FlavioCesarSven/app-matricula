@@ -2,7 +2,6 @@
     <div class="modal-dialog " role="document">
         <form id="frm_programa" onsubmit="return guardarRegistro()">
 
-
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"  id="titulo_ventana">Programas</h5>

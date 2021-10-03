@@ -5,7 +5,6 @@ require_once '../entity/cProgramaE.php';
 
 class cProgramasM
 {
-
     function Listar()
     {
         $oConn = new connMySQL();
@@ -101,7 +100,7 @@ class cProgramasM
                 $oEnt->getNomb_pro(),
                 $oEnt->getDesc_pro(),
                 $oEnt->getEstd_pro(),
-                $oEnt->getIdprograma()
+                $oEnt->getIdprograma()  
             );
 
             $stmt->execute();

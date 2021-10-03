@@ -1,6 +1,7 @@
 <?php 
 
 require_once '../model/cPeriodoM.php';
+require_once '../entity/cPeriodo.php';
 
 class cPeriodoC 
 {
@@ -17,6 +18,8 @@ class cPeriodoC
             //asignar valores
             $oEnt->setIdperiodo($_REQUEST["inputID"]);
             $oEnt->setNomb_per(trim($_REQUEST["inputNombre"]));
+            $oEnt->setInicio_per(trim($_REQUEST["inputFinicio"]));
+            $oEnt->setFfin_per(trim($_REQUEST["inputFinal"]));
             if (isset($_REQUEST["inputEstado"]))
                 $oEnt->setEstd_per("I");
             else
@@ -32,6 +35,31 @@ class cPeriodoC
         $msg = $oMod->Insertar($oEnt);
         //retornar Mensaje
         return $msg;
+    }
+
+    function Update(cPeriodoE $oEnt)
+    {
+        $oMod = new cPeriodoM();
+        $msg = $oMod->Editar($oEnt );
+        return $msg;
+    }
+
+    function Delete($idprog) {
+        //crear un objeto a partir del modelo
+        $oMod = new cPeriodoM();
+        //Trasladar los datos al Modelo y se recepciona Mensaje
+        $msg = $oMod->Eliminar( $idprog );
+        //retornar Mensaje
+        return $msg;
+    }
+
+    function SelecById($idprog) {
+        //crear un objeto a partir del modelo
+        $oMod = new cPeriodoM();
+        //Trasladar los datos al Modelo y se recepciona Mensaje
+        $row = $oMod->SeleccionarxID( $idprog );
+        //retornar Mensaje
+        return $row;
     }
 }
 
@@ -50,13 +78,13 @@ if (isset($_REQUEST["inputAccion"])) {
             break;
         case "Update":
             //print_r($_POST);
-            // echo $oCont->Update($oCont->getDataForm());
+            echo $oCont->Update($oCont->getDataForm());
             break;
         case "Delete":
-            // echo $oCont->Delete($_REQUEST["InputID"]);
+            echo $oCont->Delete($_REQUEST["inputID"]);
             break;
         case "SelectByID":
-            // $rpta = $oCont->SelectByID($_REQUEST["InputID"]);
+            $rpta = $oCont->SelecById($_REQUEST["inputID"]);
             echo json_encode($rpta);
             break;
         
