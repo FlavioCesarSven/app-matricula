@@ -10,9 +10,7 @@ function abrirModal(){
     }, 1000 );
 
     $('#titulo_ventana').text('Agregar Operador');
-
     $('#inputAccion').val('Insert');
-    
     $('#w_operador').modal({
         show: true,
         backdrop: 'static'
@@ -52,7 +50,16 @@ function guardarRegistro(){
                 contentType: false,
                 processData : false,
                 success: function (rpta){
-                  alert(rpta)
+                  
+                    if (rpta =='OK') {
+                        Swal.fire(
+                         'Sistema de Matricula!',
+                         'Registro Guardado',
+                         'success'
+                      );  
+                         limpiarControles();
+                     }
+
                 }
             });
         }
@@ -61,18 +68,79 @@ function guardarRegistro(){
     return false;
 }
 
-function editarPrograma(){
+function editarPrograma( idprog ){
+
     setTimeout( function () {
         $('#inputNombre').focus();
     }, 1000 );
     
     $('#titulo_ventana').text('Editar Operador');
-    $('#inputAccion').val('Udpate');
-    
+    var ruta = "../controller/cOperadorC.php";
+    var accion = "SelectByID";
 
-    $('#w_operador').modal({
-        show: true,
-        backdrop: 'static'
-    });    
+    $.ajax({
+        type: 'POST',
+        url: ruta,
+        data: 'inputAccion=' + accion + '&inputID='+ idprog,
+        success: function (rpta)
+        {
+
+            datos = JSON.parse( rpta );
+
+            $('#inputID').val( datos.idoperador );
+            $('#inputNombre').val( datos.nomb_ope );
+
+            if( datos.estd_ope == 'A' ){
+                $('#inputEstado').attr('checked', true);
+            }else{
+                $('#inputEstado').attr('checked', false);
+            }
+
+            $('#inputAccion').val('Update');
+
+            $('#w_operador').modal({
+                show: true,
+                backdrop: 'static'
+            });  
+        }
+    });   
     
+}
+
+function actualizarPagina(){
+    window.location.reload();
+}
+
+function limpiarControles(){
+    $('#frm_programa')[0].reset();
+}
+
+function eliminarRegistro(idprog){
+    Swal.fire({
+        title: 'Sistema de Matricula',
+        text: "¿Seguro de Eliminar el Registro?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+        
+      }).then((result) => {
+        if (result.isConfirmed) {
+        
+            var ruta = "../controller/cOperadorC.php";
+            var accion = "Delete";
+
+            $.ajax({
+                type: 'POST',
+                url: ruta,
+                data: 'inputAccion=' + accion + '&inputID='+ idprog,
+                success: function (rpta){
+                  alert(rpta);
+                  actualizarPagina();
+                }
+            });
+        }
+      });
 }

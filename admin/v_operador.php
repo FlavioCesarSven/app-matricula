@@ -91,11 +91,11 @@
                                                     <td><?php echo $row["nomb_ope"] ?></td>
                                                     <td><?php echo $row["estd_ope"] ?></td>
                                                     <td>
-                                                        <button class="btn btn-danger" title="Actualizar">
+                                                        <button class="btn btn-danger" onclick="editarPrograma(<?php echo $row["idoperador"] ?> )" title="Actualizar">
                                                             <i class="fa fa-edit"></i>
                                                         </button>
 
-                                                        <button class="btn btn-warning" title="Eliminar">
+                                                        <button class="btn btn-warning" onclick="eliminarRegistro( <?php echo $row["idoperador"] ?> )" title="Eliminar <?php echo $row["nomb_ope"]?>">
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </td>

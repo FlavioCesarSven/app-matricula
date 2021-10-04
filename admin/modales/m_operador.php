@@ -5,9 +5,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"  id="titulo_ventana">Programas</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
             <div class="modal-body">
             <div class="card card-primary">
@@ -45,7 +45,7 @@
             </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="actualizarPagina()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 <button  type="submit" class="btn btn-danger"> <i class="fas fa-save"></i> Guardar</button>
             </div>
         </div>

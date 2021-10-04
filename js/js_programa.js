@@ -30,7 +30,6 @@ function guardarRegistro(){
 
     Swal.fire({
         title: 'Seguro de Guardar los cambios?',
-        // text: "Sistema de Matricula",
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
