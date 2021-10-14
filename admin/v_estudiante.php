@@ -43,73 +43,84 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            
+
                             <!-- region editable -->
-                            <?php  
-                                // incluir controlador
-                                require_once '../controller/cEstudianteC.php';
-                                // crear el objeto
-                                $oEstC = new cEstudianteC();
-                                // ejecutar la consulta
-                                $result = $oEstC->listar();
+                            <?php
+                            // incluir controlador
+                            require_once '../controller/cEstudianteC.php';
+                            // crear el objeto
+                            $oEstC = new cEstudianteC();
+                            // ejecutar la consulta
+                            $result = $oEstC->listar();
                             ?>
                             <!-- fin region editable -->
                             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Estudiantes Registrados: <?php  echo mysqli_num_rows($result); ?></h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Dni</th>
-                    <th>Apellidos y Nombres</th>
-                    <th>Fecha Nac</th>
-                    <th>Sexo</th>
-                    <th>Programa</th>
-                    <th>Operador</th>
-                    <th>N° Movil</th>
-                    <th>Opciones</th>
-                  </tr>
-                  </thead>
-                  
-                  <tbody>
-                      <?php 
-                        foreach ($result as  $row) {
-                            $fecha = $row["fnac_est"];
-                            $fecha = date("d/m/Y", strtotime($fecha));
-                      ?>
-                      <tr>
-                          <td><?php echo $row["idestudiante"] ?></td>
-                          <td><?php echo $row["ndni_est"] ?></td>
-                          <td><?php echo $row["nombres"] ?></td>
-                          <td><?php echo $fecha ?></td>
-                          <td><?php echo $row["sexo_est"] ?></td>
-                          <td><?php echo $row["nomb_pro"] ?></td>
-                          <td><?php echo $row["nomb_ope"] ?></td>
-                          <td><?php echo $row["ncel_est"] ?></td>
-                          <td>
-                                <button class="btn btn-danger" title="Actualizar">
-                                    <i class="fa fa-edit"></i>
-                                </button>
+                                <div class="card-header">
+                                    <h3 class="card-title">Estudiantes Registrados: <?php echo mysqli_num_rows($result); ?></h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
 
-                                <button class="btn btn-warning" title="Eliminar">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                          </td>
-                      </tr>
+                                    <!-- Button trigger modal -->
+                                    <div class="text-right" style="margin-bottom: 10px;">
+                                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w_programa"> -->
+                                        <button onclick="abrirModal()" type="button" class="btn btn-primary">
+                                            <i class="fas fa-plus"></i> Agregar
+                                        </button>
+                                    </div>
 
-                      <?php 
-                        }
-                      ?>
-                  </tbody>
+                                    <?php include_once './modales/m_estudiante.php'; ?>
 
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Dni</th>
+                                                <th>Apellidos y Nombres</th>
+                                                <th>Fecha Nac</th>
+                                                <th>Sexo</th>
+                                                <th>Programa</th>
+                                                <th>Operador</th>
+                                                <th>N° Movil</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <?php
+                                            foreach ($result as  $row) {
+                                                $fecha = $row["fnac_est"];
+                                                $fecha = date("d/m/Y", strtotime($fecha));
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $row["idestudiante"] ?></td>
+                                                    <td><?php echo $row["ndni_est"] ?></td>
+                                                    <td><?php echo $row["nombres"] ?></td>
+                                                    <td><?php echo $fecha ?></td>
+                                                    <td><?php echo $row["sexo_est"] ?></td>
+                                                    <td><?php echo $row["nomb_pro"] ?></td>
+                                                    <td><?php echo $row["nomb_ope"] ?></td>
+                                                    <td><?php echo $row["ncel_est"] ?></td>
+                                                    <td>
+                                                        <button class="btn btn-danger" title="Actualizar">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+
+                                                        <button class="btn btn-warning" title="Eliminar">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
                             <!-- /.card -->
                         </div>
                         <!-- /.col -->
@@ -136,5 +147,5 @@
 
     <?php include_once './includes/s_js.php' ?>
 </body>
-
+     <script src="../js/js_estudiante.js"></script>
 </html>
