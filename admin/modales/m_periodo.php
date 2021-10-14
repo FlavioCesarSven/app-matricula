@@ -44,7 +44,7 @@
 
 
                   <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="inputEstado" name="inputEstado" value="I">
+                  <input type="checkbox" class="form-check-input" id="inputEstado" name="inputEstado" value="A">
                     <label class="form-check-label" for="inputEstado">Estado</label>
                   </div>
 
