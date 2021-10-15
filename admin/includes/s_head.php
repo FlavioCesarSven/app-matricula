@@ -13,5 +13,6 @@
 
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/bootstrap-select.css">
 
   <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.css">

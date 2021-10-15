@@ -30,7 +30,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
                                 <li class="breadcrumb-item active">Index</li>
                             </ol>
                         </div>
@@ -63,7 +63,7 @@
                                 //recorrer filas
                                 foreach ($result as $row) {
                                     
-                                    ?>
+                                ?>
                                     <option value="<?php echo $row["idprograma"] ?>"> <?php echo $row["nomb_pro"] ?> </option>
                                 <?php
                                 }
