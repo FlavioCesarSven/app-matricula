@@ -4,6 +4,8 @@ function init(){}
 
 function abrirModal(){
     
+    limpiarControles();
+
     setTimeout( function () {
         $('#inputNombre').focus();
     }, 1000 );
@@ -18,14 +20,44 @@ function abrirModal(){
 }
 
 function guardarRegistro(){
-    var nombre = $('#inputNombre').val();
-    if( nombre.length == 0 ){
-       
-        $('#msgenvio').html('<div class="alert alert-danger" role="alert">Ingrese el Nombre </div>').show(300).delay(2000).hide(300);
 
-        $('#inputNombre').focus();
-        return false;
-    }
+
+        if( inputDni.length == 0 ){
+
+            $('#msg').html('<div class="alert alert-danger" role="alert">Ingrese el DNI </div>').show(300).delay(2000).hide(300);
+
+           
+            $('#inputDni').focus();
+            return false;
+        }
+
+        var inputApellidos = $('#inputApellidos').val();
+        if( inputApellidos.length == 0 ){
+        
+            $('#msg').html('<div class="alert alert-danger" role="alert">Ingrese los Apellidos </div>').show(300).delay(2000).hide(300);
+
+            $('#inputApellidos').focus();
+            return false;
+        }
+
+        var inputNombres = $('#inputNombres').val();
+        if( inputNombres.length == 0 ){
+        
+            $('#msg').html('<div class="alert alert-danger" role="alert">Ingrese los Nombres </div>').show(300).delay(2000).hide(300);
+
+            $('#inputNombres').focus();
+            return false;
+        }
+
+        var inputSexo = $('#inputSexo').val();
+        if( inputSexo.length == null ){
+        
+            $('#msg').html('<div class="alert alert-danger" role="alert">Seleccione el Sexo </div>').show(300).delay(2000).hide(300);
+
+            $('#inputSexo').focus();
+            return false;
+        }
+
 
     Swal.fire({
         title: 'Seguro de Guardar los cambios?',
@@ -38,8 +70,7 @@ function guardarRegistro(){
       }).then((result) => {
         if (result.isConfirmed) {
         
-            var ruta = "../controller/cProgramasC.php";
-
+            var ruta = "../controller/cEstudianteC.php";
             var formData = new FormData($('#frm_estudiante')[0]);
 
             $.ajax({
@@ -49,7 +80,7 @@ function guardarRegistro(){
                 contentType: false,
                 processData : false,
                 success: function (rpta){
-
+                    alert( rpta )
                     if (rpta =='OK') {
                        Swal.fire(
                         'Sistema de Matricula!',

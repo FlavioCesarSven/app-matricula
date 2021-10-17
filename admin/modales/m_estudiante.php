@@ -122,7 +122,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputOperador">Operador Movil (*)</label>
-                                                <select name="inputOperador" id="inputOperador" class="form-control">
+                                                <select name="inputOperador" id="inputOperador" class="form-control selectpicker" data-live-search="true">
                                                 <option selected disabled>Seleccione</option>
                                                     <?php 
                                                         foreach ($result_operador as $row) {
@@ -134,9 +134,9 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-sm-6">
-                                            <div class="form-group">
-                                                <label for="inputMovil">N° Movil  (*)</label>
-                                                <input type="email" class="form-control" id="inputMovil" name="inputMovil" placeholder="Movil" maxlength="9">
+                                        <div class="form-group">
+                                                <label for="inputMovil">N° Movil (*) </label>
+                                                <input type="text" class="form-control" id="inputMovil" name="inputMovil" placeholder="Número de Movil" maxlength="9">
                                             </div>
                                         </div>
                                     </div>
@@ -155,7 +155,7 @@
 
                                             <div class="form-group">
                                             <label for="inputUbigeo">Departamento/Provincia/Distrito (*)</label>
-                                                <select class="form-control selectpicker"  data-live-search="true" id="inputUbigeo"  >
+                                                <select class="form-control selectpicker"  data-live-search="true" id="inputUbigeo" name="inputUbigeo" >
                                                 <option selected disabled>Seleccione</option>
                                                     <?php 
                                                         foreach ($result_ubigeo as $row) {
@@ -172,6 +172,13 @@
                                                 <input type="checkbox" class="form-check-input" id="inputEstado" name="inputEstado" value="A">
                                                 <label class="form-check-label" for="inputEstado">Estado</label>
                                             </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-12" id="msg">
+                                            
                                         </div>
                                     </div>
                                 </div>

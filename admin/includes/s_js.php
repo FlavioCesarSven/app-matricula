@@ -19,6 +19,8 @@
 <script src="plugins/sweetalert2/sweetalert2.js"></script>
 <script src="dist/js/bootstrap-select.js"></script>
 
+<script src="./dist/js/input.js"></script>
+
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->

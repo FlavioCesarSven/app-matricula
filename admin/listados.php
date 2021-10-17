@@ -3,6 +3,7 @@
 
 <head>
     <?php include_once './includes/s_head.php' ?>
+   
 
     <title>Panel de Administración</title>
 </head>
