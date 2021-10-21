@@ -80,7 +80,7 @@
                                                 <th>Fecha Nac</th>
                                                 <th>Sexo</th>
                                                 <th>Programa</th>
-                                                <th>Operador</th>
+                                                <!-- <th>Operador</th> -->
                                                 <th>N° Movil</th>
                                                 <th>Opciones</th>
                                             </tr>
@@ -95,11 +95,11 @@
                                                 <tr>
                                                     <td><?php echo $row["idestudiante"] ?></td>
                                                     <td><?php echo $row["ndni_est"] ?></td>
-                                                    <td><?php echo $row["nombres"] ?></td>
+                                                    <td><?php echo $row["ESTUDIANTE"] ?></td>
                                                     <td><?php echo $fecha ?></td>
                                                     <td><?php echo $row["sexo_est"] ?></td>
                                                     <td><?php echo $row["nomb_pro"] ?></td>
-                                                    <td><?php echo $row["nomb_ope"] ?></td>
+                                                    <!-- <td><?php echo $row["nomb_ope"] ?></td> -->
                                                     <td><?php echo $row["ncel_est"] ?></td>
                                                     <td>
                                                         <button class="btn btn-danger" title="Actualizar">

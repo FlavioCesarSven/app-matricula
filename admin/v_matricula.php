@@ -92,14 +92,18 @@
                                                 $fecha = date("d/m/Y", strtotime($fecha));
                                             ?>
                                                 <tr>
-                                                    <td><?php echo $row["idestudiante"] ?></td>
-                                                    <td><?php echo $row["nombres"] ?></td>
+                                                    <td><?php echo $row["idmatricula"] ?></td>
+                                                    <td><?php echo $row["ESTUDIANTE"] ?></td>
                                                     <td><?php echo $fecha ?></td>
-                                                    <td><?php echo $row["sexo_est"] ?></td>
+                                                    <!--  -->
+                                                    <td><?php echo $row["sexo_est"] ?></td> 
+                                                    <!--  -->
                                                     <td><?php echo $row["nomb_pro"] ?></td>
                                                     <td><?php echo $row["nomb_cic"] ?></td>
                                                     <td><?php echo $row["turn_mat"] ?></td>
+                                                    <!--  -->
                                                     <td><?php echo $row["estd_mat"] ?></td>
+                                                    <!--  -->
                                                     <td>
                                                         <button class="btn btn-danger" title="Actualizar">
                                                             <i class="fa fa-edit"></i>
