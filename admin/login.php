@@ -50,7 +50,6 @@
                             <div class="form-group">
                                 <label style="color:#FFF;font-weight: 600" for="exampleInputEmail1">Login:</label>
                                 <input id="InputLogin" type="text" class="form-control text-center" placeholder="Ingrese Login" maxlength="20" autofocus="autofocus">
-
                             </div>
                             <div class="form-group">
                                 <label style="color:#FFF;font-weight: 600" for="exampleInputPassword1">Password:</label>
@@ -84,9 +83,10 @@
             </span>
         </div>
     </footer>
+    <script src="../js/js_usuario.js"></script>
     <script src="plugins/jquery/jquery.js" type="text/javascript"></script>
     <script src="plugins/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="../js/js_usuarios.js" type="text/javascript"></script>
+    
 </body>
 
 </html>

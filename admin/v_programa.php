@@ -1,3 +1,15 @@
+<?php 
+
+    ob_start();
+    session_start();
+
+    if (!isset($_SESSION["usuario"])  ) {
+        header("Location:login.php");
+    }else{
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,3 +152,9 @@
 </body>
     <script src="../js/js_programa.js" type="text/javascript"></script>                                        
 </html>
+<?php 
+
+} 
+ob_end_flush();
+
+?>

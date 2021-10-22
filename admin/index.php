@@ -1,3 +1,16 @@
+<!-- <?php 
+
+ob_start();
+session_start();
+
+if (!isset($_SESSION["usuario"])  ) {
+    header("Location:login.php");
+}else{
+
+
+?> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,3 +86,9 @@
 </body>
 
 </html>
+
+<?php 
+
+} ob_end_flush();
+
+?>
