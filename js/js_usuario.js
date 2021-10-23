@@ -31,7 +31,7 @@ function ValidarAcceso()
                 data: 'InputLogin=' + login + '&InputPassword=' + password + '&inputAccion=' + accion,
                 success: function (rpta)
                 {
-                    alert( rpta );
+                    // alert( rpta, 'Datos Ingresados' );
 
                     if (rpta!= "null")
                        $(location).attr("href","index.php");//pagina principal admin

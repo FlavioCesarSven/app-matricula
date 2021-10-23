@@ -7,7 +7,6 @@
         header("Location:login.php");
     }else{
 
-
 ?>
 
 <!DOCTYPE html>

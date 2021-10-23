@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once '../model/cUsuarioM.php';
 
 class cUsuarioC
@@ -30,6 +32,8 @@ if (isset($_REQUEST["inputAccion"])) {
 
                 if (isset($row)) {
                     $_SESSION["usuario"]=$row->usuario; 
+                    $_SESSION["nomb_are"]=$row->nomb_are; 
+                    $_SESSION["foto_usu"]=$row->foto_usu; 
                 }
 
                 //codificar en formato json
@@ -37,6 +41,16 @@ if (isset($_REQUEST["inputAccion"])) {
                
             }
             break;
+
+            case "CerrarSesion":
+
+                session_unset();
+                session_destroy();
+    
+                header("Location:../admin/login.php");
+    
+    
+                break;
         
     }
 }

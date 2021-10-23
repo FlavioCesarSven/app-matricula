@@ -19,7 +19,7 @@
          <!-- Notifications Dropdown Menu -->
          <li class="nav-item dropdown">
              <a class="nav-link" data-toggle="dropdown" href="#">
-                 <i class="fas fa-user-cog"></i> Sesion de <?php echo $_SESSION["usuario"];  ?>
+                 <i class="fas fa-user-cog"></i> Sesion de <?php echo $_SESSION["usuario"]; ?> | Área:  <?php echo $_SESSION["nomb_are"]; ?>
              </a>
              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                  <div class="dropdown-divider"></div>
@@ -27,7 +27,7 @@
                      <i class="fas fa-envelope mr-2"></i> Configuración
                  </a>
                  <div class="dropdown-divider"></div>
-                 <a href="#" class="dropdown-item">
+                 <a href="../controller/cUsuarioC.php?inputAccion=CerrarSesion" class="dropdown-item">
                      <i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión
                  </a>
                 
