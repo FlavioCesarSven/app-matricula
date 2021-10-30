@@ -15,5 +15,4 @@ class cUsuarioM {
         return $result;
     }
 
-
 }

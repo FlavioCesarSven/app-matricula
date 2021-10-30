@@ -17,7 +17,7 @@ if (!isset($_SESSION["usuario"])  ) {
 <head>
 
     <?php include_once './includes/s_head.php' ?>
-
+    <link rel="stylesheet" href="dist/css/style_img.css">
     <title>Estudios</title>
 </head>
 
@@ -115,11 +115,11 @@ if (!isset($_SESSION["usuario"])  ) {
                                                     <!-- <td><?php echo $row["nomb_ope"] ?></td> -->
                                                     <td><?php echo $row["ncel_est"] ?></td>
                                                     <td>
-                                                        <button class="btn btn-danger" title="Actualizar">
+                                                    <button class="btn btn-danger" onclick="editarEstudiante(<?php echo $row["idestudiante"] ?> )" title="Actualizar">
                                                             <i class="fa fa-edit"></i>
                                                         </button>
 
-                                                        <button class="btn btn-warning" title="Eliminar">
+                                                        <button class="btn btn-warning" onclick="eliminarRegistro( <?php echo $row["idestudiante"] ?> )" >
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </td>
@@ -137,6 +137,8 @@ if (!isset($_SESSION["usuario"])  ) {
                             <!-- /.card -->
                         </div>
                         <!-- /.col -->
+
+
                     </div>
                     <!-- /.row -->
                 </div>

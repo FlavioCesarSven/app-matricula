@@ -13,7 +13,7 @@
                 <img src="../<?php echo $_SESSION["foto_usu"]; ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Flavius Cesar Ps</a>
+                <a href="#" class="d-block"><?php echo $_SESSION["usuario"]; ?></a>
             </div>
         </div>
 

@@ -5,7 +5,7 @@
 
     <?php include_once './includes/s_head.php' ?>
 
-    <title>Programa de Estudio</title>
+    <title>Matricul de Estudio</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
