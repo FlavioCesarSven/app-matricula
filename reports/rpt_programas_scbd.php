@@ -2,6 +2,8 @@
 
 require_once './fpdf/fpdf.php';
 
+require_once '../controller/cProgramasC.php';
+
 $pdf = new FPDF();
 $pdf -> AddPage();
 $pdf -> Image('../images/logo.png', 10, 10, -600);
@@ -15,20 +17,16 @@ $pdf -> Cell(90, 10, "NOMBRE", 1,0,'C');
 $pdf -> Cell(70, 10, utf8_decode("DESCRIPCION"), 1,0,'C');
 $pdf -> Cell(20, 10, utf8_decode("ESTADO"), 1,1,'C');
 
-$pdf -> Cell(10, 10, "1", 1,0,'C');
-$pdf -> Cell(90, 10, utf8_decode("COMPUTACIÓN E INFORMÁTICA"), 1,0,'L');
-$pdf -> Cell(70, 10, "Este prog....", 1,0,'L');
-$pdf -> Cell(20, 10, "A", 1,1,'C');
+$oCont = new cProgramasC();
+$result = $oCont->listar();
 
-$pdf -> Cell(10, 10, "1", 1,0,'C');
-$pdf -> Cell(90, 10, utf8_decode("CONTABILIDAD"), 1,0,'L');
-$pdf -> Cell(70, 10, "Este prog....", 1,0,'L');
-$pdf -> Cell(20, 10, "A", 1,1,'C');
-
-$pdf -> Cell(10, 10, "1", 1,0,'C');
-$pdf -> Cell(90, 10, utf8_decode("ENFERMERÍA TÉCNICA"), 1,0,'L');
-$pdf -> Cell(70, 10, "Este prog....", 1,0,'L');
-$pdf -> Cell(20, 10, "A", 1,1,'C');
+foreach ($result as $row) {
+    
+    $pdf -> Cell(10, 10, $row["idprograma"], 1,0,'C');
+    $pdf -> Cell(90, 10, utf8_decode($row["nomb_pro"]), 1,0,'L');
+    $pdf -> Cell(70, 10, utf8_decode($row["desc_pro"]), 1,0,'L');
+    $pdf -> Cell(20, 10, $row["estd_pro"], 1,1,'C');
+}
 
 $pdf -> Output();
 
