@@ -80,6 +80,10 @@ if (!isset($_SESSION["usuario"])  ) {
                                         <button onclick="abrirModal()" type="button" class="btn btn-primary">
                                             <i class="fas fa-plus"></i> Agregar
                                         </button>
+
+                                        <a href="../reports/rpt_estudiante_ccbd.php" class="btn btn-danger">
+                                            <i class="fas fa-print"></i>Imprimir
+                                        </a>
                                     </div>
 
                                     <?php include_once './modales/m_estudiante.php'; ?>

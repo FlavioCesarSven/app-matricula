@@ -21,6 +21,16 @@ $pdf -> Cell(70, 10, "Este prog....", 1,0,'L');
 $pdf -> Cell(20, 10, "A", 1,1,'C');
 
 $pdf -> Cell(10, 10, "1", 1,0,'C');
+$pdf -> Cell(90, 10, utf8_decode("INGENIERIA CIVIL"), 1,0,'L');
+$pdf -> Cell(70, 10, "Este prog....", 1,0,'L');
+$pdf -> Cell(20, 10, "A", 1,1,'C');
+
+$pdf -> Cell(10, 10, "1", 1,0,'C');
+$pdf -> Cell(90, 10, utf8_decode("INGENIERIA INDUSTRIAL"), 1,0,'L');
+$pdf -> Cell(70, 10, "Este prog....", 1,0,'L');
+$pdf -> Cell(20, 10, "A", 1,1,'C');
+
+$pdf -> Cell(10, 10, "1", 1,0,'C');
 $pdf -> Cell(90, 10, utf8_decode("CONTABILIDAD"), 1,0,'L');
 $pdf -> Cell(70, 10, "Este prog....", 1,0,'L');
 $pdf -> Cell(20, 10, "A", 1,1,'C');
