@@ -68,6 +68,17 @@ class cEstudianteM {
         return $row;
     }
 
+    function SeleccionarxID_Ficha($idest)
+    {
+        $oConn = new connMySQL();
+        $sql  = "select * from v_estudiante_ficha where idestudiante = '$idest'";
+
+        $result = $oConn->executeQuery($sql);
+
+        $row = $result->fetch_assoc();
+        return $row;
+    }
+
 
     function Editar(cEstudianteE $oEnt)
     {

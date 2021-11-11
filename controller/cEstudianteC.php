@@ -89,6 +89,14 @@ class cEstudianteC
         //retornar Mensaje
         return $row;
     }
+    function SelecById_Ficha($idestu) {
+        //crear un objeto a partir del modelo
+        $oMod = new cEstudianteM();
+        //Trasladar los datos al Modelo y se recepciona Mensaje
+        $row = $oMod->SeleccionarxID_Ficha( $idestu );
+        //retornar Mensaje
+        return $row;
+    }
 }
 
 

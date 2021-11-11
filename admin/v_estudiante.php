@@ -126,6 +126,8 @@ if (!isset($_SESSION["usuario"])  ) {
                                                         <button class="btn btn-warning" onclick="eliminarRegistro( <?php echo $row["idestudiante"] ?> )" >
                                                             <i class="fa fa-trash"></i>
                                                         </button>
+
+                                                        <a href="#" class="btn btn-info"> <i class="fa fa-print"></i> </a>
                                                     </td>
                                                 </tr>
 
