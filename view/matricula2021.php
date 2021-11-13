@@ -77,12 +77,24 @@
 
                                                     <div class="row">
                                                         <div style="margin-top: 1em;" class="col-lg-3">
+                                                            <?php
+                                                            require_once '../controller/cOperadorC.php';
+                                                            $oProgC = new cOperadorC();
+                                                            $result_operador = $oProgC->listar();
+
+                                                            foreach ($result_operador as $row) {
+                                                            }
+                                                            ?>
                                                             <span>OPERADOR MÓVIL: </span>
-                                                            <select class="form-control clase_txt" id="InputOperador" name="InputOperador">
-                                                                <option disabled="disabled" selected="selected">Seleccione Operador</option>
-                                                                <option value="1">Entel</option>
-                                                                <option value="2">Movistar</option>
-                                                            </select>
+                                                            <select name="inputOperador" id="inputOperador" class="form-control " >
+                                                            <option selected disabled>Seleccione</option>
+                                                            <?php
+                                                            foreach ($result_operador as $row) {
+                                                            ?>
+                                                                <option value="<?php echo $row["idoperador"] ?>"><?php echo $row["nomb_ope"] ?></option>
+                                                            <?php  } ?>
+
+                                                        </select>
                                                         </div>
                                                         <div style="padding-top: 1em;" class="col-lg-3">
                                                             <span>N° MÓVIL: </span>
@@ -118,30 +130,41 @@
                                         </div>
                                     </div>
 
-                                    <br>
-
                                     <div class="card">
-                                        <div class="card-header">        
-                                            1. DIRECCIÓN - LUGAR DE NACIMIENTO
-                                        </div>
-                                        <div class="card-body" style="background-color: #F0F2F5;border:0;border-radius: 0">
-                                            <div class="row">    
-                                                <div class="col-xl-6 col-md-9"> 
+                                    <div class="card-header">
+                                        1. DIRECCIÓN - LUGAR DE NACIMIENTO
+                                    </div>
+                                    <div class="card-body" style="background-color: #F0F2F5;border:0;border-radius: 0">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-md-9">
                                                 <span>DIRECCIÓN: </span>
-                                                <input id="InputDireccion" name="InputDireccion" class="form-control clase_txt" placeholder="Dirección"  maxlength="60"  type="text">
-                                                </div>
-                                                <div class="col-xl-6 col-md-3"> 
-                                                <span>LUGAR DE PROCEDENCIA: </span>
-                                                            <select class="form-control clase_txt" id="InputOperador" name="InputOperador">
-                                                                <option disabled="disabled" selected="selected">Seleccione Operador</option>
-                                                                <option value="1">Entel</option>
-                                                                <option value="2">Movistar</option>
-                                                            </select>
-                                                </div>
-
+                                                <input id="InputDireccion" name="InputDireccion" class="form-control clase_txt" placeholder="Dirección" maxlength="60" type="text">
                                             </div>
+                                            <div class="col-xl-6 col-md-3">
+
+                                            <?php
+                                            require_once '../controller/cUbigeoC.php';
+                                            $oProgC = new cUbigeoC();
+                                            $result_ubigeo = $oProgC->listar();
+
+                                            foreach ($result_ubigeo as $row) {
+                                            }
+                                            ?>
+                                                <span>LUGAR DE PROCEDENCIA: </span>
+                                                <select class="form-control selectpicker" data-live-search="true" id="inputUbigeo" name="inputUbigeo">
+                                                    <option selected disabled>Seleccione</option>
+                                                    <?php
+                                                    foreach ($result_ubigeo as $row) {
+                                                    ?>
+                                                        <option value="<?php echo $row["idubigeo"] ?>"><?php echo $row["ubigeo"] ?></option>
+                                                    <?php  } ?>
+
+                                                </select>
+                                            </div>
+
                                         </div>
                                     </div>
+                                </div>
                                 </div>
 
                                 <div class="row" style="padding:0.5em 1.5em;">  

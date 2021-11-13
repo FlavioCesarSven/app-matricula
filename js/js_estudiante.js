@@ -61,8 +61,6 @@ function cargarImagen()
 }
 
 
-
-
 function abrirModal(){
     
     limpiarControles();
