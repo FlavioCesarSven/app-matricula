@@ -127,7 +127,7 @@ if (!isset($_SESSION["usuario"])  ) {
                                                             <i class="fa fa-trash"></i>
                                                         </button>
 
-                                                        <a href="#" class="btn btn-info"> <i class="fa fa-print"></i> </a>
+                                                        <a href="../reports/rpt_estudiante_ficha.php?idest=<?php echo $row["idestudiante"] ?> " class="btn btn-info" title="Imprimir Ficha"> <i class="fa fa-print"></i> </a>
                                                     </td>
                                                 </tr>
 

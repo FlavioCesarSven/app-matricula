@@ -1,0 +1,300 @@
+/*html *{
+    -webkit-font-smoothing: antialiased;
+}*/
+header
+{
+    background-color: #082b35; 
+    padding-top: 0.8em;
+    padding-bottom: 0.4em;
+    text-align: center; 
+    color:#fff;
+}
+.card-header
+{
+    background-color:#00A1DC;
+    font-size: 1em;
+    font-weight: 600;
+    color:#fff;
+    border:0;
+    border-radius: 0
+}
+#InputDNI
+{
+    padding: 0.2em;
+    margin-top: 0.2em;
+    font-weight: 600;
+    font-size: 22px;
+    color:#FB344B;
+    text-align: center
+}
+.clase_txt
+{
+    background: #f8f8f8;
+    color:#2698f2;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.fondo_etiqueta
+{
+    text-align: center;
+    padding: 0.4em;
+    background-color: #FB344B;
+    color:#fff;
+    font-weight: 600
+}
+
+.btn{
+    position: relative;
+    padding: 12px 30px !important;
+    margin: 5px 1px !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.btn.btn-primary {
+    color: #fff !important;
+    background-color: #EB3D3C !important;
+    border-color: #EB3D3C;
+/*    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14),
+        0 3px 1px -2px rgba(156, 39, 176, 0.2),
+        0 1px 5px 0 rgba(156, 39, 176, 0.12);*/
+}
+.btn.btn-danger {
+    color: #fff !important;
+    background-color: #0095FF !important;
+    border-color: #0095FF;
+/*    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14),
+        0 3px 1px -2px rgba(156, 39, 176, 0.2),
+        0 1px 5px 0 rgba(156, 39, 176, 0.12);*/
+}
+.btn.btn-infor {
+    color: #fff !important;
+    background-color: #1E8E3E !important;
+    border-color: #1E8E3E;
+/*    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14),
+        0 3px 1px -2px rgba(156, 39, 176, 0.2),
+        0 1px 5px 0 rgba(156, 39, 176, 0.12);*/
+}
+
+.btn.btn-warning {
+    color: #fff !important;
+    background-color: #FDC800 !important;
+    border-color: #FDC800;
+/*    box-shadow: 0 2px 2px 0 rgba(253,200, 0, 0.14),
+        0 3px 1px -2px rgba(253, 200, 0, 0.2),
+        0 1px 5px 0 rgba(253, 200, 0, 0.12);*/
+}
+
+.btn.btn-warning:hover{
+    box-shadow: 0 14px 26px -12px rgba(253, 200, 0, 0.42),
+        0 4px 23px 0px rgba(253, 200, 0, 0.12), 
+        0 8px 10px -5px rgba(253, 200,0, 0.2);
+}
+
+.btn.btn-primary:hover{
+    box-shadow: 0 14px 26px -12px rgba(235, 61, 60, 0.42),
+        0 4px 23px 0px rgba(235, 61, 60, 0.12), 
+        0 8px 10px -5px rgba(235, 61, 60, 0.2);
+}
+.btn.btn-danger:hover{
+    box-shadow: 0 14px 26px -12px rgba(87, 161, 248, 0.42),
+        0 4px 23px 0px rgba(0, 0, 0, 0.12), 
+        0 8px 10px -5px rgba(156, 39, 176, 0.2);
+}
+
+.btn.btn-primary:active{
+    box-shadow: 0 14px 26px -12px rgba(87, 161, 248, 0.42),
+        0 4px 23px 0px rgba(0, 0, 0, 0.12), 
+        0 8px 10px -5px rgba(156, 39, 176, 0.2) !important;
+}
+.btn.btn-link{
+    background-color: transparent;
+    color: #999999;
+    box-shadow: none;
+    font-size: 14px !important;
+}
+
+.btn.btn-link:hover{
+    background-color: transparent;
+    color: #999999;
+    text-decoration: none;
+}
+
+.btn.btn-danger.btn-link {
+    background-color: transparent;
+    color: #f44336;
+    box-shadow: none;
+}
+
+.btn.btn-primary.btn-link{
+    background-color: transparent !important;
+    color: #9c27b0 !important;
+}
+
+.btn.btn-primary.btn-link:hover{
+    background-color: transparent !important;
+    color: #9c27b0 !important;
+    box-shadow: none ;
+}
+
+.btn.btn-primary.btn-link:active{
+    background-color: transparent !important;
+    color: #9c27b0 !important;
+    box-shadow: none !important;
+}
+
+.btn.btn-info {
+    color: #fff !important;
+    background-color: #00bcd4 !important;
+    border-color: #00bcd4;
+    box-shadow: 0 2px 2px 0 rgba(0,188,212,.14), 0 3px 1px -2px rgba(0,188,212,.2), 0 1px 5px 0 rgba(0,188,212,.12);
+}
+
+.btn.btn-info.focus{
+    color: #fff;
+    background-color: #00aec5;
+    border-color: #008697;
+    box-shadow: 0 14px 26px -12px rgba(0,188,212,.42),
+        0 4px 23px 0 rgba(0,0,0,.12), 
+        0 8px 10px -5px rgba(0,188,212,.2);
+
+}
+.btn.btn-info:focus{
+    color: #fff;
+    background-color: #00aec5;
+    border-color: #008697;
+    box-shadow: 0 14px 26px -12px rgba(0,188,212,.42),
+        0 4px 23px 0 rgba(0,0,0,.12), 
+        0 8px 10px -5px rgba(0,188,212,.2);
+}
+.btn.btn-info:hover {
+    color: #fff;
+    background-color: #00aec5;
+    border-color: #008697;
+    box-shadow: 0 14px 26px -12px rgba(0,188,212,.42),
+        0 4px 23px 0 rgba(0,0,0,.12), 
+        0 8px 10px -5px rgba(0,188,212,.2);
+}
+
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/*.btn .material-icons{
+    position: relative;
+    display: inline-block;
+    top: 0;
+    margin-top: -1em;
+    margin-bottom: -1em;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+.btn.btn-just-icon {
+    font-size: 24px !important;
+    height: 41px;
+    min-width: 41px;
+    width: 41px;
+    padding: 0 !important;
+    overflow: hidden;
+    position: relative;
+    line-height: 41px;
+}*/
+
+
+.btn.btn-just-icon .fa {
+    color: #fff;
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+    transform: none;
+    left: 0;
+    top: 0;
+    height: 100%;
+    line-height: 41px;
+    font-size: 20px;
+}
+
+.btn.btn-lg{
+    padding: 18px !important;
+}
+
+.btn.btn-round {
+    border-radius: 30px;
+}
+
+
+
+
+/* Estilo para la imagen*/
+#preview
+{
+/*    position: relative;
+    max-height: 250px;*/
+}
+
+#preview a
+{
+/*   position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;*/
+    /*display: none;*/
+}
+#preview img
+{
+/*    max-height: 230px;
+    width: auto;*/
+}
+
+input[type=file]
+{
+/*    position: absolute;    
+    width: 0;*/
+    visibility: hidden;
+    z-index: -9999;
+}
+#info_file
+{
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    max-width: auto;
+}
+#cargando
+{
+    height: 60px;
+    width: 60px;
+    display: none;
+}
+/*.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+.modal .modal-footer .btn-group > .btn:first-child {
+  border-bottom-left-radius: 0;
+}
+.modal .modal-footer .btn-group > .btn:last-child {
+  border-top-right-radius: 0;
+}*/

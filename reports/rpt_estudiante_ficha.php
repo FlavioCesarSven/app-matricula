@@ -1,5 +1,8 @@
 <?php 
 
+
+if( isset($_GET["idest"]) ){
+
 // require_once './fpdf/fpdf.php';
 require_once './rpt_plantillaEstudianteFicha.php';
 
@@ -11,49 +14,30 @@ $pdf ->AddPage();
 $pdf ->AliasNbPages();
 
 $pdf -> Cell(20,10, utf8_decode("DNI"),1,0,'C');
-$pdf -> Cell(75,10, utf8_decode("APELLIDOS"),1,0,'C');
-$pdf -> Cell(75,10, utf8_decode("NOMBRES"),1,0,'C');
+$pdf -> Cell(70,10, utf8_decode("APELLIDOS"),1,0,'C');
+$pdf -> Cell(70,10, utf8_decode("NOMBRES"),1,0,'C');
 $pdf -> Cell(30,10, utf8_decode("FOTO"),1,1,'C');
 
 $oCont = new cEstudianteC();
 $row = $oCont->SelecById_Ficha(2);
 
     $pdf -> Cell(20, 20, $row["ndni_est"], 1,0,'C');
-    $pdf -> Cell(75, 20, utf8_decode($row["apel_est"]), 1,0,'C');
-    $pdf -> Cell(75, 20, utf8_decode($row["nomb_est"]), 1,0,'L');
-    $pdf -> Cell(30, 20,  $pdf->Image('../'.$row['foto_est'], $pdf->GetX()+6, $pdf->GetY()+2, 8), 1,1,'C');
+    $pdf -> Cell(70, 20, utf8_decode($row["apel_est"]), 1,0,'C');
+    $pdf -> Cell(70, 20, utf8_decode($row["nomb_est"]), 1,0,'L');
+    $pdf -> Cell(30, 20,  $pdf->Image('../'.$row['foto_est'], $pdf->GetX()+6, $pdf->GetY()+2, 15), 1,1,'C');
+    
+	$pdf -> Cell(45,10, utf8_decode("FECHA NAC."),1,0,'C');
+	$pdf -> Cell(45,10, utf8_decode("SEXO"),1,0,'C');
+	$pdf -> Cell(50,10, utf8_decode("OPERADOR"),1,0,'C');
+	$pdf -> Cell(50,10, utf8_decode("N° MOVIL"),1,1,'C');
+
+	$pdf -> Cell(45, 20, $row["fnac_est"], 1,0,'C');
+    $pdf -> Cell(45, 20, utf8_decode($row["sexo_est"]), 1,0,'C');
+    $pdf -> Cell(50, 20, utf8_decode($row["nomb_ope"]), 1,0,'L');
+    $pdf -> Cell(50, 20, utf8_decode($row["ncel_est"]), 1,1,'C');
 
     $pdf->Output();
-
+}else {
+	echo "<script>alert('Seleccione un estudiante');</script>";
+}
 ?> 
-<!-- 
-SELECT
-	tb_estudiante.ndni_est, 
-	tb_estudiante.apel_est, 
-	tb_estudiante.nomb_est, 
-	tb_estudiante.foto_est, 
-	tb_estudiante.ncel_est, 
-	tb_estudiante.cins_est, 
-	tb_estudiante.dire_est, 
-	tb_estudiante.sexo_est, 
-	tb_estudiante.fnac_est, 
-	tb_operador.nomb_ope, 
-	tb_programa.nomb_pro, 
-	tb_ubiego.ndis_ubi, 
-	tb_ubiego.npro_ubi, 
-	tb_ubiego.ndep_ubi, 
-	tb_estudiante.idestudiante
-FROM
-	tb_programa
-	INNER JOIN
-	tb_estudiante
-	ON 
-		tb_programa.idprograma = tb_estudiante.idprograma
-	INNER JOIN
-	tb_operador
-	ON 
-		tb_estudiante.idoperador = tb_operador.idoperador
-	INNER JOIN
-	tb_ubiego
-	ON 
-		tb_estudiante.idubigeo = tb_ubiego.idubigeo  -->
