@@ -97,6 +97,7 @@ function buscarEstudiante()
                             $('#InputTurno').val(datos.nomb_cic + ' - ' + datos.turn_mat);
                             $('#inputOperador').val(datos.idoperador);
                             $('#InputCelular').val(datos.ncel_est);
+                            $('#inputFecNac').val(datos.fnac_est);
                             $('#InputMail').val(datos.cins_est);
                             $('#foto_est').attr('src', '../' + datos.foto_est);
                             $('#mi_imagen').attr('src', '../' + datos.fotv_mat);

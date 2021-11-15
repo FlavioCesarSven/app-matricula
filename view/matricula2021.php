@@ -136,9 +136,15 @@
                                     </div>
                                     <div class="card-body" style="background-color: #F0F2F5;border:0;border-radius: 0">
                                         <div class="row">
-                                            <div class="col-xl-6 col-md-9">
+                                            <div class="col-xl-4 col-md-9">
                                                 <span>DIRECCIÓN: </span>
                                                 <input id="InputDireccion" name="InputDireccion" class="form-control clase_txt" placeholder="Dirección" maxlength="60" type="text">
+                                            </div>
+
+                                            
+                                            <div class="col-xl-2 col-md-9">
+                                                <span >Fech. Nacimiento</span>
+                                                <input type="date" class="form-control" id="inputFecNac" name="inputFecNac">
                                             </div>
                                             <div class="col-xl-6 col-md-3">
 
@@ -198,6 +204,7 @@
     //Librerias JS
     include_once 'includes/s_js.php';
     ?>   
+    <script src="./js/input.js"></script>
     <script src="../js/js_matricula_estudiante.js" type="text/javascript"></script>
 </body>
 
