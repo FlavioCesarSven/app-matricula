@@ -28,7 +28,7 @@
                                 FORMULARIO DE RATIFICACIÓN DE MATRÍCULA REGULAR 2021 - II <br>
                                 (ESTUDIANTES DEL II, IV y VI CICLO)
                             </div>
-                            <form id="frmUsuarioMat" onsubmit="return ActualizarDatos()">
+                            <form id="frmMatricula" onsubmit="return ActualizarDatos()">
 
                                 <div class="card-body"> 
                                     <div class="card">
@@ -42,7 +42,8 @@
                                                         <div class="col-xl-9 col-md-9">
                                                             <div class="row"> 
                                                                 <div class="col-xl-3 col-md-3" style="padding-right: 0.3em">
-                                                                    <input id="InputID" type="hidden">
+                                                                    <input id="InputID" name="InputID" type="hidden">
+                                                                    <input id="InputIDMat" name="InputIDMat" type="hidden">
                                                                     <input type="hidden"  id="InputAccion" name="InputAccion">
                                                                     <input id="InputDNI" name="InputDNI" class="form-control" placeholder="Ingrese DNI" type="text" autofocus="autofocus" maxlength="8">
                                                                     <div id="msgDni"></div>
@@ -50,11 +51,12 @@
                                                                 <div class="col-xl-9 col-md-9" style="padding-left: 0.3em">
                                                                     <button onclick="buscarEstudiante()" type="button" class="btn btn-warning"><i class="fa fa-search"></i> Buscar </button>
                                                                     <button id="btnLimpiar" onclick="limpiarFormUsuario()" type="button" class="btn btn-secondary"><i class="fa fa-trash"></i> Limpiar</button>
+                                                                    <!-- <div id="msgApel"></div> -->
                                                                 </div>
                                                                 <div class="col-xl-12 col-lg-12" style="padding-top: 1em" >
                                                                     <span>APELLIDOS Y NOMBRES: </span>
                                                                     <input id="InputApellidos"  name="InputApellidos" class="form-control clase_txt" disabled type="text">
-
+                                                                    <div id="msgApel"></div>
                                                                 </div>
                                                                 <div class="col-xl-8 col-lg-8" style="padding-top: 1em;">
                                                                     <span>PROGRAMA DE ESTUDIOS: </span>
@@ -95,14 +97,17 @@
                                                             <?php  } ?>
 
                                                         </select>
+                                                        <div id="msgOpe"></div>
                                                         </div>
                                                         <div style="padding-top: 1em;" class="col-lg-3">
                                                             <span>N° MÓVIL: </span>
                                                             <input id="InputCelular" name="InputCelular" class="form-control clase_txt" placeholder="N° Móvil"  maxlength="9"  type="text">
+                                                            <div id="msgCel"></div>
                                                         </div>
                                                         <div style="padding-top: 1em;" class="col-lg-6">
                                                             <span>E-MAIL INSTITUCIONAL: </span>
                                                             <input id="InputMail" name="InputMail" class="form-control clase_txt" placeholder="Correo Institucional"  maxlength="60"  type="text">
+                                                            <div id="msgMail"></div>
                                                         </div>
                                                         <div id="msgenvio1" class="col-lg-12">
                                                             
@@ -114,16 +119,16 @@
                                                     <p style="font-size: 1em;color:#333">Este comprobante será validado por el Personal Administrativo de la institución.</p>
                                                     <div class="row">
                                                         <div class="col-md-12 col-lg-12 text-center" id="preview">
-                                                            <img id="mi_imagen" style="width: 60%; " src="../images/voucher/no-disponible.jpg" alt=""/>
+                                                            <img id="mi_imagen" style="width: 60%;" src="../images/voucher/no-disponible.jpg">
                                                             <a id="openFile" href=# class="btn btn-danger" style="padding: 0.6em 0"><i class="fa fa-picture-o"></i> Cargar Imagen</a>
                                                         </div>
                                                     </div>   
 
-                                                    <input type="file" name="InputFile" id="InputFile"/>
+                                                    <input type="file" name="InputFile" id="InputFile" >
 
                                                     <!-- Insertamos un Campo Oculto -->
                                                     <input type="hidden" id="InputOculto" name="InputOculto" />
-
+                                                    <div id="msgVoucher"></div>
                                                 </div>
 
                                             </div>
@@ -139,6 +144,7 @@
                                             <div class="col-xl-4 col-md-9">
                                                 <span>DIRECCIÓN: </span>
                                                 <input id="InputDireccion" name="InputDireccion" class="form-control clase_txt" placeholder="Dirección" maxlength="60" type="text">
+                                                <div id="msgDire"></div>
                                             </div>
 
                                             
@@ -166,6 +172,7 @@
                                                     <?php  } ?>
 
                                                 </select>
+                                                <div id="msgUbig"></div>
                                             </div>
 
                                         </div>

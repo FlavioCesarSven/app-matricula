@@ -46,6 +46,7 @@ function cargarImagen()
             //Escribir el nombre del archivo en
             $('#info_file').text('');
             $('#info_file').text(nameFile);
+            $('#InputOculto').val(nameFile);
 
             //cargar la imagen en el preview
             var reader = new FileReader();
@@ -59,6 +60,84 @@ function cargarImagen()
     }
     );
 }
+
+function ActualizarDatos() {
+    // alert( 'hello' );
+
+    //Validacion
+    var InputDNI = $('#InputDNI').val();
+    //2. Pregunta si esta vacio
+    if (InputDNI.length != 8)
+    {
+        $('#msgDni').html('<div class="alert alert-danger" role="alert">Ingrese 8 Dígitos</div>').show(300).delay(2300).hide(300);
+        $('#InputDNI').focus();
+        return false;
+    }
+
+    var InputApel = $('#InputApellidos').val();
+    //2. Pregunta si esta vacio
+    if (InputApel.length == 0)
+    {
+        $('#msgApel').html('<div class="alert alert-danger" role="alert">Seleccione a un estudiante correcto</div>').show(300).delay(2300).hide(300);
+        $('#InputApellidos').focus();
+        return false;
+    }
+
+    var InputOperador = $('#inputOperador').val();
+    //Pregunta si esta vacio
+    if (InputOperador == null)
+    {
+        $('#msgOpe').html('<div class="alert alert-danger" role="alert">Seleccione Operador</div>').show(300).delay(2300).hide(300);
+        $('#InputOperador').focus();
+        return false;
+    }
+
+    var InputCelular = $('#InputCelular').val();
+//    //2. Pregunta si esta vacio
+    if (InputCelular.length != 9)
+    {
+        $('#msgCel').html('<div class="alert alert-danger" role="alert">Ingrese 9 Dígitos</div>').show(300).delay(2300).hide(300);
+        $('#InputCelular').focus();
+        return false;
+    }
+
+    var InputMail = $('#InputMail').val();
+    if ($("#InputMail").val().indexOf('@', 0) == -1 || $("#InputMail").val().indexOf('.', 0) == -1)
+    {
+        $('#msgMail').html('<div class="alert alert-danger" role="alert">Ingrese un Correo Electronico Valido</div>').show(300).delay(2300).hide(300);
+        $('#InputMail').focus();
+        return false;
+    }
+
+    var InputDireccion = $('#InputDireccion').val();
+//    //2. Pregunta si esta vacio
+    if (InputDireccion.length == 0)
+    {
+        $('#msgDire').html('<div class="alert alert-danger" role="alert">Ingrese Dirección</div>').show(300).delay(2300).hide(300);
+        $('#InputDireccion').focus();
+        return false;
+    }
+
+    var InputUbigeo = $('#inputUbigeo').val();
+    //Pregunta si esta vacio
+    if (InputUbigeo == null)
+    {
+        $('#msgUbig').html('<div class="alert alert-danger" role="alert">Seleccione Ubigeo</div>').show(300).delay(2300).hide(300);
+        $('#inputUbigeo').focus();
+        return false;
+    }
+    //Ver si se seleccionó una imagen
+    var InputOculto = $('#InputOculto').val();
+    if (InputOculto == '../images/voucher/no-disponible.jpg')
+    {
+        $('#msgVoucher').html('<div class="alert alert-danger" role="alert">Subir imagen de Voucher</div>').show(300).delay(2300).hide(300);
+        $('#openFile').focus();
+        return false;
+    }
+
+    return false;
+}
+
 
 function buscarEstudiante()
 {
@@ -103,6 +182,7 @@ function buscarEstudiante()
                             $('#mi_imagen').attr('src', '../' + datos.fotv_mat);
                             $('#InputOculto').val('../'+datos.fotv_mat);
                             $('#InputDireccion').val(datos.dire_est);
+                            // $('#inputFecNac').val('../'+datos.fnac_est);
                             $('#inputUbigeo').val(datos.idubigeo);
                             $('#inputUbigeo').selectpicker('refresh');
                             
