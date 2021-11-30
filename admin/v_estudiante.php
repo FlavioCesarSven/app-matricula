@@ -7,9 +7,7 @@ if (!isset($_SESSION["usuario"])  ) {
     header("Location:login.php");
 }else{
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -169,6 +167,7 @@ if (!isset($_SESSION["usuario"])  ) {
     <?php include_once './includes/s_js.php' ?>
 </body>
      <script src="../js/js_estudiante.js"></script>
+
 </html>
 
 <?php 

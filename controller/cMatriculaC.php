@@ -99,7 +99,9 @@ if (isset($_REQUEST["InputAccion"])) {
 
 
         case "UpdateMat":
+            // print_r($_REQUEST);
             $oCont->UpdateEstudiante($oCont->getFormularioEstudiante());
+            echo $oCont->UpdateMatricula($oCont->getFormularioMatricula());
             break;
                 
         case "SelectByDni":

@@ -1,3 +1,13 @@
+<?php 
+
+ob_start();
+session_start();
+
+if (!isset($_SESSION["usuario"])  ) {
+    header("Location:login.php");
+}else{
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,12 +85,13 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Apellidos y Nombres</th>
+                                                <th>Dirección</th>
                                                 <th>Fecha Nac</th>
-                                                <th>Sexo</th>
-                                                <th>Programa</th>
-                                                <th>Ciclo</th>
-                                                <th>Turno</th>
-                                                <th>Estado</th>
+                                                <th>Correo</th>
+                                                <th>N° Celular</th>
+                                                <th>Operador</th>
+                                                <th>Escuela Profesional</th>
+                                                <th>Ubigeo</th>
                                                 <th>Opciones</th>
                                             </tr>
                                         </thead>
@@ -92,17 +103,15 @@
                                                 $fecha = date("d/m/Y", strtotime($fecha));
                                             ?>
                                                 <tr>
-                                                    <td><?php echo $row["idmatricula"] ?></td>
-                                                    <td><?php echo $row["ESTUDIANTE"] ?></td>
-                                                    <td><?php echo $fecha ?></td>
-                                                    <!--  -->
-                                                    <td><?php echo $row["sexo_est"] ?></td> 
-                                                    <!--  -->
+                                                <td><?php echo $row["idmatricula"] ?></td>
+                                                <td><?php echo $row["ESTUDIANTE"] ?></td>
+                                                <td><?php echo $row["dire_est"] ?></td>
+                                                <td><?php echo $fecha ?></td>
+                                                    <td><?php echo $row["cins_est"] ?></td>
+                                                    <td><?php echo $row["ncel_est"] ?></td>
+                                                    <td><?php echo $row["nomb_ope"] ?></td>
                                                     <td><?php echo $row["nomb_pro"] ?></td>
-                                                    <td><?php echo $row["nomb_cic"] ?></td>
-                                                    <td><?php echo $row["turn_mat"] ?></td>
-                                                    <!--  -->
-                                                    <td><?php echo $row["estd_mat"] ?></td>
+                                                    <td><?php echo $row["UBIGEO"] ?></td>
                                                     <!--  -->
                                                     <td>
                                                         <button class="btn btn-danger" title="Actualizar">
@@ -152,3 +161,8 @@
 </body>
 
 </html>
+
+
+<?php 
+
+} ob_end_flush();

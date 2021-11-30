@@ -68,7 +68,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="v_usuario.php" class="nav-link">
+                            <a href="v_matricula.php" class="nav-link">
                                 <i class="fa fa-mobile nav-icon"></i>
                                 <p>Usuarios</p>
                             </a>
