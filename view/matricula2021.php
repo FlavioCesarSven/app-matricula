@@ -50,7 +50,7 @@
                                                                 </div>
                                                                 <div class="col-xl-9 col-md-9" style="padding-left: 0.3em">
                                                                     <button onclick="buscarEstudiante()" type="button" class="btn btn-warning"><i class="fa fa-search"></i> Buscar </button>
-                                                                    <button id="btnLimpiar" onclick="limpiarFormUsuario()" type="button" class="btn btn-secondary"><i class="fa fa-trash"></i> Limpiar</button>
+                                                                    <button id="btnLimpiar" onclick="limpiarForm()" type="button" class="btn btn-secondary"><i class="fa fa-trash"></i> Limpiar</button>
                                                                     <!-- <div id="msgApel"></div> -->
                                                                 </div>
                                                                 <div class="col-xl-12 col-lg-12" style="padding-top: 1em" >
